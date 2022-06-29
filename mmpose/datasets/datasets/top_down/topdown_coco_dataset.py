@@ -135,6 +135,7 @@ class TopDownCocoDataset(Kpt2dSviewRgbImgTopDownDataset):
         valid_objs = []
         for obj in objs:
             if 'bbox' not in obj:
+                print(obj)
                 continue
             x, y, w, h = obj['bbox']
             x1 = max(0, x)
