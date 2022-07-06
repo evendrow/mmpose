@@ -2,7 +2,7 @@ _base_ = [
     '../../../../_base_/default_runtime.py',
     '../../../../_base_/datasets/jrdb.py'
 ]
-evaluation = dict(interval=10, metric='mAP', save_best='AP')
+evaluation = dict(interval=2, metric='mAP', save_best='AP')
 
 optimizer = dict(
     type='Adam',
@@ -95,6 +95,7 @@ data_cfg = dict(
 
 train_pipeline = [
     dict(type='LoadImageFromFile'),
+    dict(type='TopDownGetBboxCenterScale', padding=1.25),
     dict(type='TopDownRandomFlip', flip_prob=0.5),
     dict(
         type='TopDownHalfBodyTransform',
@@ -120,6 +121,7 @@ train_pipeline = [
 
 val_pipeline = [
     dict(type='LoadImageFromFile'),
+    dict(type='TopDownGetBboxCenterScale', padding=1.25),
     dict(type='TopDownAffine'),
     dict(type='ToTensor'),
     dict(
@@ -139,31 +141,32 @@ test_pipeline = val_pipeline
 
 data_root = 'data/jrdb'
 data = dict(
-    samples_per_gpu=32,
+    samples_per_gpu=64,
     workers_per_gpu=2,
-    val_dataloader=dict(samples_per_gpu=32),
-    test_dataloader=dict(samples_per_gpu=32),
+    val_dataloader=dict(samples_per_gpu=64),
+    test_dataloader=dict(samples_per_gpu=64),
     train=dict(
         type='TopDownJRDBDataset',
         # ann_file=f'{data_root}/annotations/train.json',
-        ann_file=f'{data_root}/labels_2d_pose_stitched/hewlett-packard-intersection-2019-01-24_0.json',
+        ann_file=f'{data_root}/annotations/train.json',
+        # ann_file=f'{data_root}/labels_2d_pose_stitched/hewlett-packard-intersection-2019-01-24_0.json',
         img_prefix=f'{data_root}/images/',
         data_cfg=data_cfg,
         pipeline=train_pipeline,
         dataset_info={{_base_.dataset_info}}),
     val=dict(
         type='TopDownJRDBDataset',
-        # ann_file=f'{data_root}/annotations/val.json',
-        ann_file=f'{data_root}/labels_2d_pose_stitched/clark-center-intersection-2019-02-28_0.json',
-        img_prefix=f'{data_root}/images/',
+        ann_file=f'{data_root}/annotations/test.json',
+        #ann_file=f'{data_root}/labels_2d_pose_stitched/clark-center-intersection-2019-02-28_0.json',
+        img_prefix=f'{data_root}/images_test/',
         data_cfg=data_cfg,
         pipeline=val_pipeline,
         dataset_info={{_base_.dataset_info}}),
-    # test=dict(
-    #     type='TopDownJRDBDataset',
-    #     ann_file=f'{data_root}/annotations/test.json',
-    #     img_prefix=f'{data_root}/images/',
-    #     data_cfg=data_cfg,
-    #     pipeline=test_pipeline,
-    #     dataset_info={{_base_.dataset_info}}),
+    test=dict(
+        type='TopDownJRDBDataset',
+        ann_file=f'{data_root}/annotations/test.json',
+        img_prefix=f'{data_root}/images_test/',
+        data_cfg=data_cfg,
+        pipeline=test_pipeline,
+        dataset_info={{_base_.dataset_info}}),
 )
