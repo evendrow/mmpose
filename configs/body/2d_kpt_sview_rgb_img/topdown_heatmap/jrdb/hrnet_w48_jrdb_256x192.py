@@ -76,8 +76,10 @@ model = dict(
         modulate_kernel=11))
 
 data_cfg = dict(
-    image_size=[192, 256],
-    heatmap_size=[48, 64],
+    # image_size=[192, 256],
+    # heatmap_size=[48, 64],
+    image_size=[960, 192], 
+    heatmap_size=[240, 48],
     num_output_channels=channel_cfg['num_output_channels'],
     num_joints=channel_cfg['dataset_joints'],
     dataset_channel=channel_cfg['dataset_channel'],
