@@ -15,9 +15,15 @@
         <i><font size="4">TRY IT OUT</font></i>
       </a>
     </sup>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <b><font size="5">MMPose 1.0 公测</font></b>
+    <sup>
+      <a href="https://mmpose.readthedocs.io/en/1.x/overview.html">
+        <i><font size="4">JOIN</font></i>
+      </a>
+    </sup>
   </div>
   <div>&nbsp;</div>
-
 [![Documentation](https://readthedocs.org/projects/mmpose/badge/?version=latest)](https://mmpose.readthedocs.io/en/latest/?badge=latest)
 [![actions](https://github.com/open-mmlab/mmpose/workflows/build/badge.svg)](https://github.com/open-mmlab/mmpose/actions)
 [![codecov](https://codecov.io/gh/open-mmlab/mmpose/branch/master/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmpose)
@@ -26,11 +32,11 @@
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/open-mmlab/mmpose.svg)](https://github.com/open-mmlab/mmpose/issues)
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/open-mmlab/mmpose.svg)](https://github.com/open-mmlab/mmpose/issues)
 
-[📘文档](https://mmpose.readthedocs.io/zh_CN/v0.27.0/) |
-[🛠️安装](https://mmpose.readthedocs.io/zh_CN/v0.27.0/install.html) |
-[👀模型库](https://mmpose.readthedocs.io/zh_CN/v0.27.0/modelzoo.html) |
-[📜论文库](https://mmpose.readthedocs.io/zh_CN/v0.27.0/papers/algorithms.html) |
-[🆕更新日志](https://mmpose.readthedocs.io/en/v0.27.0/changelog.html) |
+[📘文档](https://mmpose.readthedocs.io/zh_CN/v0.29.0/) |
+[🛠️安装](https://mmpose.readthedocs.io/zh_CN/v0.29.0/install.html) |
+[👀模型库](https://mmpose.readthedocs.io/zh_CN/v0.29.0/modelzoo.html) |
+[📜论文库](https://mmpose.readthedocs.io/zh_CN/v0.29.0/papers/algorithms.html) |
+[🆕更新日志](https://mmpose.readthedocs.io/en/v0.29.0/changelog.html) |
 [🤔报告问题](https://github.com/open-mmlab/mmpose/issues/new/choose)
 
 </div>
@@ -64,7 +70,7 @@ https://user-images.githubusercontent.com/15977946/124654387-0fd3c500-ded1-11eb-
 
 - **支持多样的数据集**
 
-  MMPose 支持了很多主流数据集的准备和构建，如 COCO、 MPII 等。 具体请参考 [数据集准备](docs/en/data_preparation.md)。
+  MMPose 支持了很多主流数据集的准备和构建，如 COCO、AIC、MPII、MPII-TRB、OCHuman 等。 具体请参考 [数据集准备](docs/en/data_preparation.md)。
 
 - **模块化设计**
 
@@ -78,15 +84,10 @@ https://user-images.githubusercontent.com/15977946/124654387-0fd3c500-ded1-11eb-
 
 ## 最新进展
 
-- 2022-06-07: MMPose [v0.27.0](https://github.com/open-mmlab/mmpose/releases/tag/v0.27.0) 已经发布. 主要更新包括:
-  - 支持了手势识别功能
-    - 试用手势识别 [demo](/demo/docs/gesture_recognition_demo.md)
-    - 了解更多关于 [算法](/docs/en/papers/algorithms/mtut.md)，[数据集](/docs/en/papers/datasets/nvgesture.md) 和 [预训练模型](/configs/hand/gesture_sview_rgbd_vid/mtut/nvgesture/i3d_nvgesture.md) 的信息
-  - 升级了 MMPose 摄像头应用接口（Webcam API），帮助用户更简捷高效地开发基于姿态估计的应用
-    - 教程 （[中文](/docs/zh_cn/tutorials/7_webcam_api.md)|[英文](/docs/en/tutorials/7_webcam_api.md)）
-    - [API 查询](https://mmpose.readthedocs.io/zh_CN/latest/api.html#mmpose-apis-webcam)
-    - [Demo](/demo/docs/webcam_demo.md)
-- 2022-04: MMPose 代码可以通过 [Gitee](https://gitee.com/open-mmlab/mmpose) 访问
+- 2022-10-14: MMPose [v0.29.0](https://github.com/open-mmlab/mmpose/releases/tag/v0.29.0) 已经发布，主要更新包括：
+  - 新增算法 [DEKR](https://arxiv.org/abs/2104.02300) (CVPR'2021). 详情请见 [模型页面](/configs/body/2d_kpt_sview_rgb_img/dekr/coco/hrnet_coco.md)
+  - 新增算法 [CID](https://openaccess.thecvf.com/content/CVPR2022/html/Wang_Contextual_Instance_Decoupling_for_Robust_Multi-Person_Pose_Estimation_CVPR_2022_paper.html) (CVPR'2022). 详情请见 [模型页面](/configs/body/2d_kpt_sview_rgb_img/cid/coco/hrnet_coco.md)
+- 2022-09-01: **MMPose v1.0.0** 公测版本已经发布 \[ [Code](https://github.com/open-mmlab/mmpose/tree/1.x) | [Docs](https://mmpose.readthedocs.io/en/1.x/) \]，欢迎尝试并提出宝贵意见
 - 2022-02-28: [MMDeploy](https://github.com/open-mmlab/mmdeploy) v0.3.0 支持 MMPose 模型部署
 - 2021-12-29: OpenMMLab 开放平台已经正式上线! 欢迎试用基于 MMPose 的[姿态估计 Demo](https://platform.openmmlab.com/web-demo/demo/poseestimation)
 
@@ -96,8 +97,8 @@ MMPose 依赖 [PyTorch](https://pytorch.org/) 和 [MMCV](https://github.com/open
 更详细的安装指南请参考 [install.md](docs/zh_cn/install.md)。
 
 ```shell
-conda create -n open-mmlab python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision -c pytorch -y
-conda activate open-mmlab
+conda create -n openmmlab python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision -c pytorch -y
+conda activate openmmlab
 pip3 install openmim
 mim install mmcv-full
 git clone https://github.com/open-mmlab/mmpose.git
@@ -122,7 +123,7 @@ MMPose 也提供了其他更详细的教程:
 ## 模型库
 
 各个模型的结果和设置都可以在对应的 config（配置）目录下的 *README.md* 中查看。
-整体的概况也可也在 [模型库](https://mmpose.readthedocs.io/zh_CN/latest/recognition_models.html) 页面中查看。
+整体的概况也可也在 [模型库](https://mmpose.readthedocs.io/zh_CN/latest/modelzoo.html) 页面中查看。
 
 <details open>
 <summary><b>支持的算法</b></summary>
@@ -142,9 +143,11 @@ MMPose 也提供了其他更详细的教程:
 - [x] [HigherHRNet](https://mmpose.readthedocs.io/zh_CN/latest/papers/backbones.html#higherhrnet-cvpr-2020) (CVPR'2020)
 - [x] [RSN](https://mmpose.readthedocs.io/zh_CN/latest/papers/backbones.html#rsn-eccv-2020) (ECCV'2020)
 - [x] [InterNet](https://mmpose.readthedocs.io/zh_CN/latest/papers/algorithms.html#internet-eccv-2020) (ECCV'2020)
-- [x] [VoxelPose](https://mmpose.readthedocs.io/zh_CN/latest/papers/algorithms.html#voxelpose-eccv-2020) (ECCV'2020
+- [x] [VoxelPose](https://mmpose.readthedocs.io/zh_CN/latest/papers/algorithms.html#voxelpose-eccv-2020) (ECCV'2020)
 - [x] [LiteHRNet](https://mmpose.readthedocs.io/zh_CN/latest/papers/backbones.html#litehrnet-cvpr-2021) (CVPR'2021)
 - [x] [ViPNAS](https://mmpose.readthedocs.io/zh_CN/latest/papers/backbones.html#vipnas-cvpr-2021) (CVPR'2021)
+- [x] [DEKR](https://mmpose.readthedocs.io/zh_CN/latest/papers/algorithms.html#dekr-cvpr-2021) (CVPR'2021)
+- [x] [CID](https://mmpose.readthedocs.io/zh_CN/latest/papers/algorithms.html#cid-cvpr-2022) (CVPR'2022)
 
 </details>
 
@@ -245,7 +248,7 @@ MMPose 在主流关键点检测基准 COCO 上达到了优越的模型精度和�
 
 ## 常见问题
 
-请参考 [FAQ](docs/en/faq.md) 了解其他用户的常见问题。
+请参考 [FAQ](docs/zh_cn/faq.md) 了解其他用户的常见问题。
 
 ## 参与贡献
 
@@ -280,6 +283,7 @@ MMPose 是一款由不同学校和公司共同贡献的开源项目。我们感�
 - [MMClassification](https://github.com/open-mmlab/mmclassification): OpenMMLab 图像分类工具箱
 - [MMDetection](https://github.com/open-mmlab/mmdetection): OpenMMLab 目标检测工具箱
 - [MMDetection3D](https://github.com/open-mmlab/mmdetection3d): OpenMMLab 新一代通用 3D 目标检测平台
+- [MMYOLO](https://github.com/open-mmlab/mmyolo): OpenMMLab YOLO 系列工具箱和基准测试
 - [MMRotate](https://github.com/open-mmlab/mmrotate): OpenMMLab 旋转框检测工具箱与测试基准
 - [MMSegmentation](https://github.com/open-mmlab/mmsegmentation): OpenMMLab 语义分割工具箱
 - [MMOCR](https://github.com/open-mmlab/mmocr): OpenMMLab 全流程文字检测识别理解工具包

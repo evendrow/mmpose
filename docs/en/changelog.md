@@ -1,5 +1,63 @@
 # Changelog
 
+## v0.29.0 (14/10/2022)
+
+**Highlights**
+
+- Support [DEKR](https://arxiv.org/abs/2104.02300), CVPR'2021 ([#1693](https://github.com/open-mmlab/mmpose/pull/1693)) @JinluZhang1126, @jin-s13, @Ben-Louis
+- Support [CID](https://openaccess.thecvf.com/content/CVPR2022/html/Wang_Contextual_Instance_Decoupling_for_Robust_Multi-Person_Pose_Estimation_CVPR_2022_paper.html), CVPR'2022 ([#1604](https://github.com/open-mmlab/mmpose/pull/1604)) @kennethwdk, @jin-s13, @Ben-Louis
+
+**Improvements**
+
+- Improve 3D pose estimation demo with viewpoint & height controlling and enriched input formats ([#1481](https://github.com/open-mmlab/mmpose/pull/1481), [#1490](https://github.com/open-mmlab/mmpose/pull/1490)) @pallgeuer, @liqikai9
+- Improve smoothing of 3D video pose estimation ([#1479](https://github.com/open-mmlab/mmpose/pull/1479)) @darcula1993
+- Improve dependency management for smoother installation ([#1491](https://github.com/open-mmlab/mmpose/pull/1491)) @danielbraun89
+- Improve documentation quality ([#1680](https://github.com/open-mmlab/mmpose/pull/1680), [#1525](https://github.com/open-mmlab/mmpose/pull/1525), [#1516](https://github.com/open-mmlab/mmpose/pull/1516), [#1513](https://github.com/open-mmlab/mmpose/pull/1513), [#1511](https://github.com/open-mmlab/mmpose/pull/1511), [#1507](https://github.com/open-mmlab/mmpose/pull/1507), [#1506](https://github.com/open-mmlab/mmpose/pull/1506), [#1525](https://github.com/open-mmlab/mmpose/pull/1525)) @Ben-Louis, @Yulv-git, @jin-s13
+
+**Bug Fixes**
+
+- Update dependency versions of pre-commit-hooks ([#1706](https://github.com/open-mmlab/mmpose/pull/1706), [#1678](https://github.com/open-mmlab/mmpose/pull/1678)) @Ben-Louis, @liqikai9
+- Fix missing data transforms in RLE configs ([#1632](https://github.com/open-mmlab/mmpose/pull/1632)) @Ben-Louis
+- Fix a bug in `fliplr_joints` that causes error when keypoint visibility has float values ([#1589](https://github.com/open-mmlab/mmpose/pull/1589)) @walsvid
+- Fix hsigmoid default parameters ([#1575](https://github.com/open-mmlab/mmpose/pull/1575)) @Ben-Louis
+- Fix a bug in UDP decoding ([#1565](https://github.com/open-mmlab/mmpose/pull/1565)) @liqikai9
+- Fix a bug in pose tracking demo with non-COCO dataset ([#1504](https://github.com/open-mmlab/mmpose/pull/1504)) @daixinghome
+- Fix typos and unused contents in configs ([#1499](https://github.com/open-mmlab/mmpose/pull/1499), [#1496](https://github.com/open-mmlab/mmpose/pull/1496)) @liqikai9
+- Fix a bug in the mesh demo ([#1482](https://github.com/open-mmlab/mmpose/pull/1482)) @zengwang430521
+
+## **v0.28.1 (28/07/2022)**
+
+This release is meant to fix the compatibility with the latest mmcv v1.6.1
+
+## v0.28.0 (06/07/2022)
+
+**Highlights**
+
+- Support [TCFormer](https://openaccess.thecvf.com/content/CVPR2022/html/Zeng_Not_All_Tokens_Are_Equal_Human-Centric_Visual_Analysis_via_Token_CVPR_2022_paper.html) backbone, CVPR'2022 ([#1447](https://github.com/open-mmlab/mmpose/pull/1447), [#1452](https://github.com/open-mmlab/mmpose/pull/1452)) @zengwang430521
+- Add [RLE](https://arxiv.org/abs/2107.11291) models on COCO dataset ([#1424](https://github.com/open-mmlab/mmpose/pull/1424)) @Indigo6, @Ben-Louis, @ly015
+- Update swin models with better performance ([#1467](https://github.com/open-mmlab/mmpose/pull/1434)) @jin-s13
+
+**New Features**
+
+- Support [TCFormer](https://openaccess.thecvf.com/content/CVPR2022/html/Zeng_Not_All_Tokens_Are_Equal_Human-Centric_Visual_Analysis_via_Token_CVPR_2022_paper.html) backbone, CVPR'2022 ([#1447](https://github.com/open-mmlab/mmpose/pull/1447), [#1452](https://github.com/open-mmlab/mmpose/pull/1452)) @zengwang430521
+- Add [RLE](https://arxiv.org/abs/2107.11291) models on COCO dataset ([#1424](https://github.com/open-mmlab/mmpose/pull/1424)) @Indigo6, @Ben-Louis, @ly015
+- Support layer decay optimizer conctructor and learning rate decay optimizer constructor ([#1423](https://github.com/open-mmlab/mmpose/pull/1423)) @jin-s13
+
+**Improvements**
+
+- Improve documentation quality ([#1416](https://github.com/open-mmlab/mmpose/pull/1416), [#1421](https://github.com/open-mmlab/mmpose/pull/1421), [#1423](https://github.com/open-mmlab/mmpose/pull/1423), [#1426](https://github.com/open-mmlab/mmpose/pull/1426), [#1458](https://github.com/open-mmlab/mmpose/pull/1458), [#1463](https://github.com/open-mmlab/mmpose/pull/1463)) @ly015, @liqikai9
+- Support installation by [mim](https://github.com/open-mmlab/mim) ([#1425](https://github.com/open-mmlab/mmpose/pull/1425)) @liqikai9
+- Support PAVI logger ([#1434](https://github.com/open-mmlab/mmpose/pull/1434)) @EvelynWang-0423
+- Add progress bar for some demos ([#1454](https://github.com/open-mmlab/mmpose/pull/1454)) @liqikai9
+- Webcam API supports quick device setting in terminal commands ([#1466](https://github.com/open-mmlab/mmpose/pull/1466)) @ly015
+- Update swin models with better performance ([#1467](https://github.com/open-mmlab/mmpose/pull/1434)) @jin-s13
+
+**Bug Fixes**
+
+- Rename `custom_hooks_config` to `custom_hooks` in configs to align with the documentation ([#1427](https://github.com/open-mmlab/mmpose/pull/1427)) @ly015
+- Fix deadlock issue in Webcam API ([#1430](https://github.com/open-mmlab/mmpose/pull/1430)) @ly015
+- Fix smoother configs in video 3D demo ([#1457](https://github.com/open-mmlab/mmpose/pull/1457)) @ly015
+
 ## v0.27.0 (07/06/2022)
 
 **Highlights**
