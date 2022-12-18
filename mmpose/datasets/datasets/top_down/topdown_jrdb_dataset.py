@@ -16,40 +16,38 @@ from .topdown_coco_dataset import TopDownCocoDataset
 
 @DATASETS.register_module(name='TopDownJRDBDataset')
 class TopDownJRDBDataset(TopDownCocoDataset):
-    """MHPv2.0 dataset for top-down pose estimation.
+    """JRDB-Pose dataset for top-down pose estimation.
 
-    "Understanding Humans in Crowded Scenes: Deep Nested Adversarial
-    Learning and A New Benchmark for Multi-Human Parsing", ACM MM'2018.
-    More details can be found in the `paper
-    <https://arxiv.org/abs/1804.03287>`__
+    "JRDB-Pose: A Large-scale Dataset for Multi-Person Pose 
+    Estimation and Tracking." More details can be found in 
+    the `paper <https://arxiv.org/abs/2210.11940>`__
 
     Note that, the evaluation metric used here is mAP (adapted from COCO),
     which may be different from the official evaluation codes.
-    'https://github.com/ZhaoJ9014/Multi-Human-Parsing/tree/master/'
-    'Evaluation/Multi-Human-Pose'
     Please be cautious if you use the results in papers.
 
     The dataset loads raw features and apply specified transforms
     to return a dict containing the image tensors and other information.
 
-    MHP keypoint indexes::
+    JRDB-Pose keypoint indexes::
 
-        0: "right ankle",
-        1: "right knee",
-        2: "right hip",
-        3: "left hip",
-        4: "left knee",
-        5: "left ankle",
-        6: "pelvis",
-        7: "thorax",
-        8: "upper neck",
-        9: "head top",
-        10: "right wrist",
-        11: "right elbow",
-        12: "right shoulder",
-        13: "left shoulder",
-        14: "left elbow",
-        15: "left wrist",
+        0: "head",
+        1: "right eye",
+        2: "left eye",
+        3: "right shoulder",
+        4: "center shoulder",
+        5: "left shoulder",
+        6: "right elbow",
+        7: "left elbow",
+        8: "center hip",
+        9: "right wrist",
+        10: "right hip",
+        11: "left hip",
+        12: "left wrist",
+        13: "right knee",
+        14: "left knee",
+        15: "right foot",
+        16: "left foot",
 
     Args:
         ann_file (str): Path to the annotation file.
